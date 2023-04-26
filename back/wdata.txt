@@ -1,0 +1,526 @@
+
+
+ http: request
+
+
+      200 ok   201 created  202 accepted    203   non authoritive information (client accepted request and the response is coming for the thired party )
+     
+      300 multiple choices{ the request having multiple loctions possiblities} 
+      
+      301 moved permently {the request moved permently to differnt locations}
+      
+      400 bad request  403 forbbiden (when we access data which we don't have access then ita accures)
+
+
+
+/////////////////////////////
+    inline templating is commonly used in web development frameworks and 
+    content management systems to generate dynamic HTML pages.
+
+
+
+    react interview questions:
+
+
+      
+        elements                                             components 
+
+                                                            this are reuseble picees code of the ui
+       this are the plain javascript objects                this are building block of the  react in which  this are composed on one are more elements
+       that represtens the dom components/
+       or componets,
+       it is lightweight description  of
+       what should be rendered in screen
+       this are immutable
+
+
+
+       pure components: this are componets rendered only based on props and state,
+
+       In React, a pure component is a component that only renders based on its props and state. It does not depend on any other data or side effects, such as the current time or data from an API. 
+       Pure components are often used to improve performance by reducing the number of unnecessary re-renders.
+
+
+///////////////////
+
+ 
+higer order components:
+
+
+  this are funcation in which   , this are powerful and flexible way to add the functionality to react components
+
+  the hoc allows you to  reuse common functionality  accress multiple componets    
+
+
+
+
+
+  //multiple request in node js 
+
+
+
+  built in http module:
+
+
+
+  const http=require("http")
+
+
+  const urls = ['http://example.com', 'http://example.org', 'http://example.net'];
+
+
+    urls.forEach(url=>{
+
+        const req= http.request(url, res=>{
+            console.log('${res.data}')
+        })
+    })
+
+
+
+    by using thired party :
+    axios 
+
+
+   const urls = ['http://example.com', 'http://example.org', 'http://example.net'];
+ 
+   
+
+    const data= urls.map(url=>axios.get(url))
+
+    axios.all(data).then(respons=>{
+        respons.forEach(subres=>{
+            console.log("subres.data)
+        })
+    })
+
+
+
+
+    urls.map(url=>axios.get("url"))
+    .then(mainres=>{
+        mainres.foreach(subres=>{
+            console.log(subres.data)
+        })
+    })
+
+
+
+
+
+///by using promises
+
+
+const mulfun=async()=>{
+
+
+  try{
+    let data= await  promises.all(urls.map(url=>axios.get("url")))
+
+     data.forEach(res=>{
+        console.log(res.data)
+     })
+    }catch(err){
+    console.log(err)
+   }
+    }
+
+
+
+
+    8. Why Node is async
+
+       1 because it is sigle thered opertions
+
+       2 because it follwes event driven and non blocking input output opertins
+
+
+  callback hell:
+    As a result, the code becomes deeply nested and hard to read,
+   making it difficult to follow the flow of the program. This is known as "callback hell" because the code looks like a pyramid or a staircase.
+
+
+
+     getDataFromServer(function(data1) {
+  processData1(data1, function(data2) {
+    processData2(data2, function(data3) {
+      processData3(data3, function(result) {
+        console.log(result);
+      });
+    });
+  });
+});
+
+
+Promise.all() is a method in JavaScript that allows you to run multiple Promises in parallel and wait for all of them to complete before continuing. 
+  It takes an array of Promises as input and returns a new Promise that resolves 
+when all the input Promises have resolved, or rejects if any one of the input Promises rejects.
+
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('Promise 1 resolved');
+  }, 1000);
+});
+
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('Promise 2 resolved');
+  }, 2000);
+});
+
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('Promise 3 resolved');
+  }, 3000);
+});
+
+Promise.all([promise1, promise2, promise3])
+  .then(results => {
+    console.log(results);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+
+///mongodb/////
+
+   
+   mongodb  is open source , no sql database ,in which it uses the json-like-document with optional schema to store the data
+
+    mongodb works on the concepts of collections and Documents
+
+         where Documents are the data stored in form of key value pairs 
+
+         where collections are group af doucuments
+
+
+    =>large scalae appliction,-scalibilty, cross plotform, document orineted-database,
+
+      secondary indexes 
+      range queries
+      sorting
+      aggregation technic
+      geospherical indexs
+      sharding process
+
+      
+
+   advantage of th mongodb :
+
+   1  mongodb supports  primary and secondary indexes for any fileds
+
+   2  mongodb uses the javascript objects in the place of proccures
+
+   3  mongodb having built in feature called sharding ,
+    (it is the technic used in destributive database , it is diffecult to handle the large database from the signgle databse are server , so this data are divided into small pieces of mangable data called shareds  , where the shardeds are distrubutted acress the mutiple server or nodes to server the user needs)
+  
+   4  mongodb  supports the scalbilty of the applications
+
+      and it is the  doucument orineted database
+
+   5  mongodb  support dyanmic databse 
+
+
+
+Map-Reduce is a data processing technique used in MongoDB to analyze and aggregate data from a collection. It involves two main steps: map and reduce.
+
+The map step applies a user-defined function (map function) to each document in the collection and emits key-value pairs based on the output of the function. The key represents the grouping criteria, and the value represents the document or a portion of the document.
+
+The reduce step applies another user-defined function (reduce function) to the output of the map function, grouping together the key-value pairs with the same key and aggregating their values. The reduce function can perform various aggregation operations, such as sum, count, and average.
+
+Map-Reduce is useful for complex data processing and analysis, such as business intelligence, data warehousing, and reporting. It can handle large volumes of data and is designed to work efficiently with distributed systems.
+
+In MongoDB, the Map-Reduce function can be executed using the mapReduce() method, which takes in the map and reduce functions as arguments, as well as optional parameters such as the query filter, sort order, and output options.
+
+While Map-Reduce is a powerful tool for data analysis and aggregation, it is generally slower than the aggregation pipeline for simple operations. Therefore, it is recommended to use the aggregation pipeline for simple aggregations and Map-Reduce for more complex operations.
+
+
+
+
+
+Here is an example of how Map-Reduce can be used in MongoDB:
+
+Suppose we have a collection of sales transactions with the following schema:
+
+yaml
+Copy code
+{
+    _id: ObjectId,
+    product: String,
+    price: Number,
+    date: Date
+}
+We want to calculate the total revenue for each product for a given date range. We can use Map-Reduce to perform this calculation:
+
+Define the map function:
+javascript
+Copy code
+var mapFunction = function() {
+    emit(this.product, this.price);
+};
+This function emits the product as the key and the price as the value for each document in the collection.
+
+Define the reduce function:
+javascript
+Copy code
+var reduceFunction = function(key, values) {
+    return Array.sum(values);
+};
+This function sums up the values for each key.
+
+Execute the Map-Reduce operation:
+
+db.sales.mapReduce(
+    mapFunction,
+    reduceFunction,
+    {
+        query: { date: { $gte: ISODate("2022-01-01"), $lt: ISODate("2022-02-01") } },
+        out: "product_revenue"
+    }
+);
+This operation runs the map and reduce functions on the sales collection, using the date range filter to limit the input documents. The output is stored in a new collection called product_revenue, which contains the total revenue for each product in the given date range.
+
+Overall, Map-Reduce provides a powerful and flexible way to analyze and aggregate data in MongoDB, and can be used in a wide range of applications.
+
+
+
+
+
+
+
+REACT LIFECYCLE MEATHED 
+
+
+
+ constrater :
+ 
+ this are meathed are first called just before the componet created,
+ this set the initialstate of commponets and bind the meatheds to componets
+
+
+static getdrivedstatefrompros: this meathed are called when the componetsis created
+  it updatees the componets state as props changes
+
+
+  render :this meatheds genrets the ui componets
+
+
+  componentwillmount:this meathed is called just before the componet is mounted to dom ,
+     
+
+    componentsDIDmount: this meathed is called just after the componets is mounted to dom, (featching data from server)
+
+
+    shouldcomponetsupdate:  this meathed is called just before the componet is update, 
+    it ensures that components arr need to update are not, based on change in state are props
+
+
+
+    componetswillunmount:this meathed is called just before the componets unmounts
+    
+    componetsdidunmount: after the componets unmounts
+
+
+
+
+    ////   react hooks
+
+
+
+    usestate , useeffect, usecontext
+
+
+        usecontext is provides way to send the data  bettween the components components without sending data to down components
+
+////
+
+
+    this are used to identifily the each child element in list , it helps the react components to ideentifliy the elements are update removed added
+
+      key : this are the special attributes (uniqic string attributes ) with are used to identifily the each  in child elements i,  
+    
+     in react key are used to identifily the or to check  if element is updated ,removed, added,
+
+     inorder to avoid the rerender of the application
+
+
+///// 
+   react router 
+    it is thired party liberary  which provieds the rounting to the react, 
+    it provides the functionality of navigation bettween the components
+
+
+
+    nested rounting:
+    url routing;
+    hashrounting:
+    
+
+/////
+
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+
+
+<BrowserRouter>
+    <Routes>
+
+
+       <Route path="register" element=<register/>><Route>
+
+
+
+
+   </Routes>
+</BrowserRouter>
+
+
+
+
+
+
+
+server/
+├── controllers/
+│   ├── payment.js
+│   └── product.js
+├── models/
+│   ├── payment.js
+│   └── product.js
+├── routes/
+│   ├── payment.js
+│   └── product.js
+├── app.js
+└── server.js
+
+client/
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── App.js
+│   ├── index.js
+│   └── index.css
+├── package.json
+├── README.md
+├── .env
+├── .env.production
+├── .gitignore
+└── yarn.lock
+
+
+
+
+const express = require("express");
+const bodyParser = require("body-parser");
+const path = require("path");
+const cors = require("cors");
+const mongoose = require("mongoose");
+const stripe = require("stripe")("YOUR_STRIPE_SECRET_KEY");
+
+const app = express();
+const port = process.env.PORT || 5000;
+
+// Bodyparser middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// CORS middleware
+app.use(cors());
+
+// MongoDB configuration
+const uri = "YOUR_MONGODB_URI";
+mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
+const connection = mongoose.connection;
+connection.once("open", () => {
+  console.log("MongoDB database connection established successfully");
+});
+
+// Mongoose model for storing orders
+const Schema = mongoose.Schema;
+const orderSchema = new Schema(
+  {
+    userid: { type: String, required: true },
+    username: { type: String, required: true },
+    useremail: { type: String, required: true },
+    items: [
+      {
+        id: { type: String, required: true },
+        name: { type: String, required: true },
+        price: { type: Number, required: true },
+        quantity: { type: Number, required: true },
+      },
+    ],
+    subtotal: { type: Number, required: true },
+    tax: { type: Number, required: true },
+    shipping: { type: Number, required: true },
+    total: { type: Number, required: true },
+    paymentid: { type: String, default: "" },
+  },
+  {
+    timestamps: true,
+  }
+);
+const Order = mongoose.model("Order", orderSchema);
+
+// Express routes
+app.get("/", (req, res) => {
+  res.send("Welcome to the MERN Stripe Checkout API");
+});
+
+app.post("/checkout", async (req, res) => {
+  try {
+    const { userid, username, useremail, items, subtotal, tax, shipping, total } = req.body;
+
+    // Create a Stripe Checkout session
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ["card"],
+      line_items: items.map((item) => {
+        return {
+          price_data: {
+            currency: "usd",
+            product_data: {
+              name: item.name,
+            },
+            unit_amount: item.price * 100,
+          },
+          quantity: item.quantity,
+        };
+      }),
+      mode: "payment",
+      success_url: "http://localhost:3000/success",
+      cancel_url: "http://localhost:3000/cancel",
+    });
+
+    // Store the order data in MongoDB
+    const newOrder = new Order({
+      userid,
+      username,
+      useremail,
+      items,
+      subtotal,
+      tax,
+      shipping,
+      total,
+    });
+    await newOrder.save();
+
+    // Send the Stripe Checkout session ID to the client
+    res.send({ sessionId: session.id });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ error: "Something went wrong" });
+  }
+});
+
+app.post("/webhook", bodyParser.raw({ type: "application/json" }), (req, res) => {
+  const event = req.body;
+
+  switch (event.type) {
+    case "checkout.session.completed":
+      const paymentId = event.data.object.id;
+      const orderId = event.data.object.metadata.orderid;
+
+      // Update the order in MongoDB with the Stripe payment ID
+      Order.findByIdAndUpdate(orderId, { paymentid: paymentId }, (

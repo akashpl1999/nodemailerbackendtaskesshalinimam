@@ -1,0 +1,69 @@
+.nav-main{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.nav-sub{
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+      background-color: aliceblue; 
+      color: black;
+
+}
+
+
+
+ul{
+
+    list-style: none;
+
+    padding: 10px;
+
+    margin: 5px;
+    
+}
+
+li{
+    margin: 10px;
+}
+
+.btn{
+    display: none;
+
+}
+
+
+@media (max-width:600px){
+
+    .btn{
+      
+        display: block;
+        padding: 10px;
+       }
+
+     
+  ul{
+
+    display: block;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top:100px;
+    background-color: aqua;
+    color: black;
+
+   }
+
+.open1{
+
+    display:block ;
+
+}
+
+
+}

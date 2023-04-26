@@ -1,0 +1,188 @@
+how to handle errors in node js
+
+
+try catch 
+
+ try{
+
+ }catch(err){
+    console.log(err)
+ }
+
+
+//promises
+
+const data =new Promise((reject, resolve)=>{
+
+    if(condtion stisifies){
+        resolve()
+    }else{
+        reject()
+    }
+})
+
+data.then((res)=>{console.log(response of resolve)})
+.catch(err)=>{console.log(err responses)}
+
+
+// callback
+
+somefunction((err, data)=>{
+
+    if(err){
+
+        console.log(err)
+
+    }else{
+        console.log(data)
+    }
+})
+
+
+
+Explain the difference between process.nextTick() and setImmediate() functions.
+
+
+ process is global object in node js and it is used to give information of current proceese and current information
+
+
+
+ process.nextTick():this are used to schedules the exection of  function at  immeditely 
+ after the current function exceution, before the next  iteration of  event loop
+
+
+  this are given with high priority over setimmediates
+  ////(next iterition of event loop)
+
+  setimmediates: this are used to schedules the exection of function
+                  at end of next iteration of event loop  
+
+    //"Life is short, smile while you still have teeth."
+
+
+
+    ///
+
+    what is event driven programming , 
+    it is technic in which the flow of exceution of program is depedends on useractions like mouse clike, keybord press etc...
+
+
+      the flow of execution is depends on events and its event handlers , the events are 
+      associtted with particular eventhandlers (function), , 
+      this hadlers are used to trigger the function
+
+
+
+         here flow of exceution not in order from top to buttom
+
+
+      const eventhandlers= require("events")
+
+      const myeventhandler=new eventhandlers()
+
+
+
+      
+         setinteval(()=>{
+             myeventhandler.emit('hello', new Date())
+
+          },5000)
+
+
+
+      
+
+
+           myeventhandler.on('hello', (data)=>{
+
+            console.log(`${data})
+
+       
+           })     
+
+
+
+
+      
+    ///////
+tracing :
+tracing is used to capture  awide varietyof
+ events such as (function calls i/o opertions,garbage collection)
+
+by analyzing captured data devleprs get th idea on flow of application
+by this they can improves the performance , aptimize the code ,
+can gain a better understanding of how the application is working and 
+where issues may be occurring.
+
+
+const tracing =require("tracing")
+
+
+
+/////
+
+
+REPL (READ -EVAL-PRINT-LOOP) :
+
+it is interactive programing environment 
+allowes the develeprs test and experiment with 
+node.js code without  createing seperete file ar opplications
+
+
+
+in REPL we can enter code snippets get  immediate feedback on output
+
+REPL is built into node.js so you can access from command line by typeing node and cliking enter
+
+
+
+in real time projects , REPL USED BY DEVEPLPERS TO TEST ANDDEBUG CODE 
+
+
+Overall, REPL is a versatile and powerful tool that can be used in a variety of scenarios, 
+from quick experimentation to live debugging in production environments.
+
+
+
+///////////////////
+
+
+fs module 
+
+
+
+r: Open the file for reading.
+rs: Open the file for reading in "sync" mode (i.e., blocking).
+
+w+: Open the file for reading and writing, overwriting the file if it already exists.
+
+wx: Like w+, but fails if the file already exists.
+a+: Open the file for reading and writing, appending data to the end of the file if it already exists.
+ax: Like a+, but fails if the file already exists.
+
+
+
+////
+
+
+   path is used to handle path to files and filedirectary
+
+
+
+   const path = require("path")
+
+   let pathfile = path.join('/bhbf", "hh", "jjrj.txt")
+
+                        \bhbf\hh\jjrj.txt
+
+
+ let pathfile = path.resolve('/bhbf", "hh", "jjrj.txt")
+ 
+                     c:\user/usernamr/nbdnsj/bhbf/hh/jjrj.txt
+
+let pathfile = path.dirname('/bbb", "hh", "jjrj.txt")
+ 
+       /bhbf/hh
+
+       let pathfile = path.basename('/bbb", "hh", "jjrj.txt")
+                      jjrj.txt

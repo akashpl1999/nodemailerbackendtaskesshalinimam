@@ -1,0 +1,1271 @@
+import { Divider, FormControl, ListItemAvatar } from "@material-ui/core";
+import { CheckBox } from "@material-ui/icons";
+
+<FormControlLabel control={<CheckBox checked={checked} onChange={handlechange} name="name you want"  color="primary/secondary" />} label="name"/>
+
+
+
+const obj1 = {a:1, b:2};
+const obj2 = {b:2, a:1};
+
+const str1 = JSON.stringify(obj1);
+const str2 = JSON.stringify(obj2);
+
+console.log(str1 === str2); // Output: true
+
+
+const arr1 = [1, 2, 3];
+const arr2 = [3, 2, 1];
+
+let isEqual = true;
+
+if (arr1.length !== arr2.length) {
+  isEqual = false;
+} else {
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      isEqual = false;
+      break;
+    }
+  }
+}
+
+console.log(isEqual); // Output: true
+
+
+const arr1 = [1, 2, 3];
+const arr2 = [3, 2, 1];
+
+const isEqual = arr1.length === arr2.length && arr1.every((value, index) => value === arr2[index]);
+
+console.log(isEqual); // Output: true
+
+
+const arr1 = ['apple', 'banana', 'orange'];
+const arr2 = ['banana', 'grape', 'orange'];
+
+let includesAll = true;
+
+for (let i = 0; i < arr1.length; i++) {
+  if (!arr2.includes(arr1[i])) {
+    includesAll = false;
+    break;
+  }
+}
+
+console.log(includesAll); // Output: false
+
+
+
+const arr1 = ['apple', 'banana', 'orange'];
+const arr2 = ['banana', 'grape', 'orange'];
+
+let includesAll = true;
+
+for (let i = 0; i < arr1.length; i++) {
+  let included = false;
+  for (let j = 0; j < arr2.length; j++) {
+    if (arr1[i] === arr2[j]) {
+      included = true;
+      break;
+    }
+  }
+  if (!included) {
+    includesAll = false;
+    break;
+  }
+}
+
+console.log(includesAll); // Output: false
+
+
+
+
+<Tabs
+  orientation="vertical"
+variant="scrollable"
+value={value}
+onChange={handleChange}
+aria-label="Vertical tabs example"
+className={classes.tabs}
+variant="fullWidth"
+indicatorColor="primary"
+textColor="primary"
+/>
+
+
+
+
+<Divider variant="middle"  />
+
+<Divider component="li" variant="inset" />
+
+
+<Divider orientation="vertical" flexItem />
+
+
+list listitem listitemtext Divider ListItemAvatar etc ....
+        <List component ="nav" subheader={<ListSubheader></ListSubheader>}
+      <ListItem button>
+        <ListItemIcon>  or         <ListItemAvatar>
+
+          <SendIcon />
+        </ListItemIcon>
+        <ListItemText primary="Sent mail" />
+      </ListItem>
+
+
+
+
+
+const columns=[
+
+
+  {
+    field:'name', this is used matches the row data
+
+    headerName:"Name",  this is labeled in table
+    width:200,  
+    editable:true  so this field can be editable
+     
+     type:"number",  type
+  } 
+]
+
+
+const rows=[
+    { id: 1, name: 'Snow', firstName: 'Jon', age: 35 },
+
+]
+
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        pageSize={5} the data nor to be displayed here
+        checkboxSelection
+        disableSelectionOnClick
+      />
+
+
+Table
+ to make dense tabel 
+ <Tabel size="small">  here like this we used 
+
+ tabelcontainer
+ tabel
+ tabelhead
+ tabelrow
+ tabelcell
+ tabelbody
+ tabelrow
+ tabelcell
+
+ this flow
+
+
+ // // // // import React from 'react';
+// // // // import PropTypes from 'prop-types';
+// // // // import { makeStyles } from '@material-ui/core/styles';
+// // // // import Paper from '@material-ui/core/Paper';
+// // // // import Hidden from '@material-ui/core/Hidden';
+// // // // import withWidth from '@material-ui/core/withWidth';
+// // // // import Typography from '@material-ui/core/Typography';
+// // // // import { IconButton, ImageList,ImageListItem,ImageListItemBar,ListSubheader } from '@material-ui/core';
+// // // // import { InfoOutlined } from '@material-ui/icons';
+
+
+
+// // // // const useStyles = makeStyles((theme) => ({
+
+// // // //     root:{
+// // // //         display:'flex',
+// // // //         flexWrap:'wrap',
+// // // //         justifyContent:'space-around',
+// // // //         overflow:'hidden',
+// // // //         backgroundColor:theme.palette.background.secondary,
+
+// // // //     },
+// // // //     imglist:{
+// // // //         width:800,
+// // // //         height:450
+// // // //     },
+// // // //     icon: {
+// // // //         color: 'rgba(255, 255, 255, 0.54)',
+// // // //       },
+
+
+// // // // }));
+
+// // // // function BreakpointUp(props) {
+// // // //   const classes = useStyles();
+
+
+
+
+
+
+// // // //   const imgarr=["https://media.istockphoto.com/id/1359225856/photo/winning-strategy-efficiency-innovation-in-business-concept-teamwork-and-leadership-concept.jpg?b=1&s=170667a&w=0&k=20&c=men2-A4uOkuecgGtXmlK0kr0gkQq98onoixgdgsqCKs=", "https://media.istockphoto.com/id/1391370501/photo/collage-with-close-up-male-and-female-eyes-of-different-ethnicity-and-age.jpg?b=1&s=170667a&w=0&k=20&c=RE2u8UK7Vm6LnbQTFUC_vTwdaK36VaQTJK6_cBOEx2s=","https://media.istockphoto.com/id/1391370501/photo/collage-with-close-up-male-and-female-eyes-of-different-ethnicity-and-age.jpg?b=1&s=170667a&w=0&k=20&c=RE2u8UK7Vm6LnbQTFUC_vTwdaK36VaQTJK6_cBOEx2s=","https://media.istockphoto.com/id/1391370501/photo/collage-with-close-up-male-and-female-eyes-of-different-ethnicity-and-age.jpg?b=1&s=170667a&w=0&k=20&c=RE2u8UK7Vm6LnbQTFUC_vTwdaK36VaQTJK6_cBOEx2s=","https://media.istockphoto.com/id/1391370501/photo/collage-with-close-up-male-and-female-eyes-of-different-ethnicity-and-age.jpg?b=1&s=170667a&w=0&k=20&c=RE2u8UK7Vm6LnbQTFUC_vTwdaK36VaQTJK6_cBOEx2s="]
+// // // //   return (
+
+
+// // // //   <div className={classes.root}>
+
+// // // //       <ImageList rowHeight={160} className={classes.imglist} cols={4}>
+
+// // // //       <ImageListItem key="Subheader" cols={2} style={{ height: 'auto', backgroundColor:"red"}}>
+// // // //           <ListSubheader component="div">December</ListSubheader>
+// // // //         </ImageListItem>
+
+
+// // // //         {  
+// // // //         imgarr.map((img,i) => (
+
+// // // //              <ImageListItem key={i}  cols={img || 1}  >
+// // // //                 <img src={img} />
+
+
+// // // //                 <ImageListItemBar title="new" subtitle="good" actionIcon={ <IconButton className={classes.icon}>
+// // // //                     <InfoOutlined/>
+// // // //                 </IconButton>
+
+// // // //                 }/>
+// // // //               </ImageListItem>
+
+
+// // // //           ))}
+
+
+// // // //       </ImageList>
+
+
+
+
+// // // //      </div>
+
+
+// // // //   );
+// // // // }
+
+
+// // // // export default BreakpointUp
+
+
+
+// // // import React from 'react';
+// // // import Switch from '@material-ui/core/Switch';
+// // // import Paper from '@material-ui/core/Paper';
+// // // import Slide from '@material-ui/core/Slide';
+// // // import FormControlLabel from '@material-ui/core/FormControlLabel';
+// // // import { makeStyles } from '@material-ui/core/styles';
+// // // import { Typography , Zoom} from '@material-ui/core';
+
+// // // const useStyles = makeStyles((theme) => ({
+// // //   root: {
+// // //     height: 180,
+// // //   },
+// // //   wrapper: {
+// // //     width: 100 + theme.spacing(2),
+// // //     display:"flex",
+
+// // // },
+// // //   paper: {
+// // //     zIndex: 1,
+// // //     position: 'relative',
+// // //     margin: theme.spacing(1),
+// // //   },
+// // //   svg: {
+// // //     width: 100,
+// // //     height: 100,
+// // //   },
+// // //   polygon: {
+// // //     fill: theme.palette.common.white,
+// // //     stroke: theme.palette.divider,
+// // //     strokeWidth: 1,
+// // //   },
+// // // }));
+
+// // // export default function SimpleSlide() {
+// // //   const classes = useStyles();
+// // //   const [checked, setChecked] = React.useState(false);
+
+// // //   const handleChange = () => {
+// // //     setChecked((prev) => !prev);
+// // //   };
+
+// // //   return (
+// // //     <div className={classes.root}>
+// // //       <div className={classes.wrapper}>
+// // //         <FormControlLabel
+// // //           control={<Switch checked={checked} onChange={handleChange} />}
+// // //           label="Show"
+// // //         />
+// // //         <Zoom direction="up" in={checked} mountOnEnter unmountOnExit>
+// // //           <Paper  className={classes.paper}>
+// // //               <Typography variant='h5'>H</Typography>
+// // //             </Paper>
+
+
+// // //         </Zoom>
+// // //         <Slide direction="left" in={checked} mountOnEnter unmountOnExit  style={{ transformOrigin: '0 0 0' }}
+// // //           {...(checked ? { timeout: 1000 } : {})}
+// // // >
+// // //           <Paper  className={classes.paper}>
+// // //           <Typography variant='h5'>E</Typography>
+
+// // //            </Paper>
+
+
+// // //         </Slide>
+// // //         <Slide direction="right" in={checked}   style={{ transformOrigin: '0 0 0' }}
+// // //           {...(checked ? { timeout: 2000 } : {})}
+// // // >
+// // //           <Paper elevation={0} className={classes.paper}>
+
+// // //                <Typography variant='h5'>L</Typography>
+
+// // //             </Paper>
+
+
+// // //         </Slide>
+// // //         <Slide direction="up" in={checked} mountOnEnter unmountOnExit           style={{ transformOrigin: '0 0 0' }}
+// // //           {...(checked ? { timeout: 3000 } : {})}
+// // // >
+// // //           <Paper elevation={0} className={classes.paper}>
+// // //           <Typography variant='h5'>L</Typography>
+
+// // //             </Paper>
+
+
+// // //         </Slide>
+// // //         <Slide direction="up" in={checked} mountOnEnter unmountOnExit           style={{ transformOrigin: '0 0 0' }}
+// // //           {...(checked ? { timeout: 2000 } : {})}
+// // // >
+// // //           <Paper elevation={0} className={classes.paper}>
+// // //           <Typography variant='h5'>O</Typography>
+
+// // //             </Paper>
+
+
+// // //         </Slide>
+
+
+
+// // //       </div>
+// // //     </div>
+// // //   );
+// // // }
+
+// // import React, { useState, useRef } from 'react';
+// // import Grid from '@material-ui/core/Grid';
+// // import Button from '@material-ui/core/Button';
+// // import ButtonGroup from '@material-ui/core/ButtonGroup';
+// // import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+// // import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+// // import Grow from '@material-ui/core/Grow';
+// // import Paper from '@material-ui/core/Paper';
+// // import Popper from '@material-ui/core/Popper';
+// // import MenuItem from '@material-ui/core/MenuItem';
+// // import MenuList from '@material-ui/core/MenuList';
+// // import { makeStyles } from '@material-ui/core';
+
+// // const options = ['Create a merge commit', 'Squash and merge', 'Rebase and merge'];
+
+
+// // const useStyles=makeStyles((theme)=>({
+
+// // }))
+
+// // export default function Container(){
+
+
+// //     const classes= useStyles()
+
+// //      const[open,setopen]= useState(false)
+
+// //      const anchorRef= useRef(null)
+
+// //      const [index,setindex]=useState(1)
+
+
+// //      const handletoggle=()=>{
+// //         setopen((prvs)=>!prvs)
+// //      }
+
+
+// //      const handleclose=(e)=>{
+
+// //         if(anchorRef.current && anchorRef.current.contains(e.target))
+// //         return;
+
+// //         setopen(false)
+// //      }   
+
+
+// //      const handlemenuclick=(e,i,dt)=>{
+// //         setindex(i)
+// //         setopen(false)
+// //         console.log(dt)
+
+// //      }
+
+
+// //     return(
+
+// //         <div className={classes.root}>
+
+// //             <ButtonGroup ref={anchorRef}  aria-label='split-btn'>
+// //                 <Button >{options[index]}</Button>
+
+// //                 <Button
+// //                   aria-controls={open ? "split-button-menu" : undefined }
+// //                   aria-expanded={open ? 'true' :undefined}
+// //                   aria-aria-label='select merge' 
+// //                   onClick={handletoggle }  >
+
+// //                    <ArrowDropDownIcon/>
+
+// //                   </Button>
+
+// //             </ButtonGroup>
+
+// //             <Popper open={open}>
+
+// //                 <Paper>
+// //                     <ClickAwayListener onClickAway={handleclose}>
+// //                          <MenuList>
+// //                             {
+// //                                 options.map((option,i)=>(
+
+// //                                      <MenuItem onClick={(e)=>handlemenuclick(e,i,option)}>     
+// //                                        {option}
+// //                                      </MenuItem>
+
+
+// //                                 ))
+
+
+
+// //                             }
+// //                             </MenuList>
+
+
+// //                     </ClickAwayListener>
+
+
+// //                 </Paper>
+
+// //             </Popper>
+
+// //         </div>
+// //     )
+
+// // }
+
+
+// // import React, { useState } from 'react';
+// // import { makeStyles } from '@material-ui/core/styles';
+// // import Grid from '@material-ui/core/Grid';
+// // import List from '@material-ui/core/List';
+// // import ListItem from '@material-ui/core/ListItem';
+// // import ListItemIcon from '@material-ui/core/ListItemIcon';
+// // import ListItemText from '@material-ui/core/ListItemText';
+// // import Checkbox from '@material-ui/core/Checkbox';
+// // import Button from '@material-ui/core/Button';
+// // import Paper from '@material-ui/core/Paper';
+
+
+
+
+
+
+
+
+// // const useStyles = makeStyles((theme) => ({
+
+// // }))
+
+
+
+// //  function not(a,b){
+// //     return a.filter((value)=> b.indexOf(value) === -1)
+// //  }
+
+
+// //  function Intersection(a,b){
+// //     return a.filter((value)=> b.indexOf(value) !== -1)
+// //  }
+
+
+// // export default function Conatiner() {
+
+
+
+
+
+// //     const classes=useStyles()
+
+// //     const [checked, setchecked]=useState([])
+
+// //     const [left, setleft]=useState([0,1,2,3])
+// //     const[right, setright]=useState([4,5,6,7])
+
+// //     const leftchecked=Intersection(checked, left)
+// //     const rightchecked=Intersection(checked, right)
+
+
+
+// //     const handleToggle=(value)=>()=>{
+
+// //         const currentIndex= checked.indexOf(value)
+
+// //         const newChecked=[...checked]
+
+// //         if(currentIndex === -1){
+
+// //             newChecked.push(value)
+
+// //            } else {
+
+// //             newChecked.splice(currentIndex, 1)
+// //         }
+
+
+// //         setchecked(newChecked)
+// //       }
+
+
+
+// //      const handleallright=()=>{
+
+// //         setright(right.concat(left))
+
+// //         setleft([])
+// //      }
+
+// //      const handleallleft=()=>{
+
+// //         setleft(left.concat(right))
+
+// //         setright([])
+// //      }
+
+// //      const  handlecheckedright=()=>{
+
+
+// //         console.log(leftchecked)
+
+// //         setright(right.concat(leftchecked))
+
+// //          setleft(not(left, leftchecked))
+
+// //          setchecked(not(checked,leftchecked))
+
+
+// //      }
+
+// //      const  handlecheckedleft=()=>{
+
+// //         console.log(rightchecked)
+
+// //         setleft(left.concat(rightchecked))
+
+// //            setright(not(right,  rightchecked))
+
+// //            setchecked(not(checked, rightchecked))
+
+// //      }
+
+
+
+
+
+
+// //        const customlist=(items)=>(
+
+// //         <Paper>
+
+// //             <List>
+
+// //                 {
+
+
+
+// //                     items.map((value)=>{
+
+
+// //                         return(
+
+
+// //                          <ListItem  onClick={handleToggle(value)}>
+
+
+// //                                 <ListItemIcon>
+
+// //                                     <Checkbox  checked={checked.indexOf(value) !== -1}/>
+
+
+
+// //                                 </ListItemIcon>
+
+// //                                 <ListItemText>{`List item ${value + 1}`}</ListItemText>
+
+// //                             </ListItem>
+// //                         )
+// //                     })
+// //                 }
+// //             </List>
+// //         </Paper>
+
+// //        )
+
+
+
+
+
+
+// //     return (
+
+
+// //         <div className={classes.root}>
+
+// //             <Grid Conatiner spacing={2} justifyContent='center' alignItems='center'>
+
+
+// //               <Grid item>{customlist(left)}</Grid>
+
+// //               <Grid item  >
+// //               <Grid container direction="column" alignItems="center">
+
+
+// //                 <Button onClick={handleallright} disabled={left.length ===0}>    
+// //                 ≫
+// //                </Button>
+
+// //                 <Button onClick={handlecheckedright} disabled={leftchecked.length === 0}>&gt</Button>
+
+// //                 <Button onClick={handlecheckedleft} disabled={rightchecked.length === 0}>&lt</Button>
+
+// //                 <Button onClick={handleallleft} disabled={right.length === 0}>     
+
+// //                        ≪
+
+// //                    </Button>
+
+// //                    </Grid>
+// //                    </Grid>
+
+// //               <Grid item > {customlist(right)}  </Grid>
+
+
+
+
+// //             </Grid>
+
+
+// //         </div>
+// //     )
+// // }
+
+
+
+
+// // import React ,{useState} from 'react';
+// // import PropTypes from 'prop-types';
+// // import { makeStyles } from '@material-ui/core/styles';
+// // import AppBar from '@material-ui/core/AppBar';
+// // import Tabs from '@material-ui/core/Tabs';
+// // import Tab from '@material-ui/core/Tab';
+// // import Typography from '@material-ui/core/Typography';
+// // import Box from '@material-ui/core/Box';
+
+
+
+
+// // function TabPanel(props){
+// //     const { children,value, index , ...other } = props;
+
+// //     return(
+// //         <div role="tabpanel" hidden={value !== index} {...other}>
+
+// //             {
+
+// //                 value === index && (
+// //                     <Box p={3}>
+// //                         <Typography>{children}</Typography>
+// //                     </Box>
+// //                 )
+// //             }
+// //         </div>
+// //     )
+// // }
+
+// // TabPanel.propTypes={
+// //     children:PropTypes.node,
+// //     index:  PropTypes.any.isRequired,
+// //     value:PropTypes.any.isRequired,
+// // }
+
+
+// // export default function SimpleTabs() {
+
+
+// //     const [value, setValue] = useState(0);
+
+// //     const handleChange = (event, newValue) => {
+// //         setValue(newValue);
+// //       };
+
+
+// //      return(
+// //         <>
+// //         <Tabs value={value} onChange={handleChange}>
+
+// //             <Tab label="Item One"  />
+
+
+// //             <Tab label="Item two"  />
+
+
+
+
+// //             <Tab label="Item three"   />
+
+
+
+
+
+// //         </Tabs> 
+
+// //      <TabPanel value={value} index={0}>
+// //         Item One
+// //       </TabPanel>
+// //       <TabPanel value={value} index={1}>
+// //         Item One2
+// //       </TabPanel>
+// //       <TabPanel value={value} index={2}>
+// //         Item One3
+// //       </TabPanel>
+
+
+
+
+
+
+// //         </>
+// //      )
+
+
+
+
+// // }  
+
+
+
+// // import React from 'react';
+// // import { makeStyles } from '@material-ui/core/styles';
+// // import Accordion from '@material-ui/core/Accordion';
+// // import AccordionDetails from '@material-ui/core/AccordionDetails';
+// // import AccordionSummary from '@material-ui/core/AccordionSummary';
+// // import Typography from '@material-ui/core/Typography';
+// // import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
+
+
+// // export default function ControlledAccordions() {
+// //    // const classes = useStyles();
+// //     const [expanded, setExpanded] = React.useState(false);
+
+// //     const handleChange = (selectone)  =>(event,  isexpanded ) => {
+
+// //           setExpanded(isexpanded ? selectone :false);
+
+// //     };
+
+// //     return (
+// //       <div>
+
+
+
+// //         <Accordion expanded={expanded ==="one"} onChange={handleChange("one")}>
+
+// //           <AccordionSummary
+// //             expandIcon={<ExpandMoreIcon />}
+// //             aria-controls="panel1bh-content"
+// //             id="panel1bh-header"
+// //           >
+// //             <Typography >General settings</Typography>
+// //             <Typography >I am an accordion</Typography>
+// //           </AccordionSummary>
+// //           <AccordionDetails>
+// //             <Typography>
+// //               Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget
+// //               maximus est, id dignissim quam.
+// //             </Typography>
+// //           </AccordionDetails>
+// //         </Accordion>
+
+
+// //         <Accordion expanded={expanded ==="two"} onChange={handleChange("two")}>
+
+// //           <AccordionSummary
+// //             expandIcon={<ExpandMoreIcon />}
+// //             aria-controls="panel2bh-content"
+// //             id="panel2bh-header"
+// //           >
+// //             <Typography >Users</Typography>
+// //             <Typography >
+// //               You are currently not an owner
+// //             </Typography>
+// //           </AccordionSummary>
+// //           <AccordionDetails>
+// //             <Typography>
+// //               Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar
+// //               diam eros in elit. Pellentesque convallis laoreet laoreet.
+// //             </Typography>
+// //           </AccordionDetails>
+// //         </Accordion>
+// //           </div>
+// //     );
+// //   }
+
+
+// // import React, { useEffect, useState } from 'react';
+// // import PropTypes from 'prop-types';
+// // import CircularProgress from '@material-ui/core/CircularProgress';
+// // import Typography from '@material-ui/core/Typography';
+// // import Box from '@material-ui/core/Box';
+
+
+// //   function CircularwithLabel(props){
+
+// //     return(
+// //         <Box position="relative" display="inline-flex">
+
+// //             <CircularProgress variant='determinate' {...props} />
+// //             <Box top={0} left={0} bottom={0} right={0}         position="absolute"
+// //         display="flex"
+// //         alignItems="center"
+// //         justifyContent="center"
+// //                   >
+
+// // <Typography variant="caption" component="div" color="textSecondary">{`${Math.round(
+// //           props.value,
+// //         )}%`}</Typography>
+
+
+// //              </Box>
+
+// //         </Box>
+// //     )
+
+// //   }
+
+// //   CircularwithLabel.propTypes={
+
+// //     value:PropTypes.number.isRequired,
+
+
+// //   }
+
+// // export default function CircularStatic() {
+
+
+// //     const [progress, setprogress]=useState(140)
+
+// //     useEffect(()=>{
+
+// //         const timer= setInterval(()=>{
+
+// //             setprogress((prevs)=> (prevs >= 100 ? 0 : prevs+10))
+
+// //         },1000);
+
+// //          return ()=>{
+// //             clearInterval(timer);
+// //          }
+
+
+
+// //     },[])
+
+
+// //     return(
+// //         <>
+
+
+
+// // <CircularwithLabel  value={progress} />
+
+
+// //         </>
+// //     )
+
+
+
+
+// // }
+
+
+
+// // import React from 'react';
+// // import PropTypes from 'prop-types';
+// // import CircularProgress from '@material-ui/core/CircularProgress';
+// // import Typography from '@material-ui/core/Typography';
+// // import Box from '@material-ui/core/Box';
+
+// // function CircularProgressWithLabel(props) {
+// //   return (
+// //     <Box position="relative" display="inline-flex">
+// //       <CircularProgress variant="determinate" {...props} />
+// //       <Box
+// //         top={0}
+// //         left={0}
+// //         bottom={0}
+// //         right={0}
+// //         position="absolute"
+// //         display="flex"
+// //         alignItems="center"
+// //         justifyContent="center"
+// //       >
+// //         <Typography variant="caption" component="div" color="textSecondary">{`${Math.round(
+// //           props.value,
+// //         )}%`}</Typography>
+// //       </Box>
+// //     </Box>
+// //   );
+// // }
+
+// // CircularProgressWithLabel.propTypes = {
+// //   /**
+// //    * The value of the progress indicator for the determinate variant.
+// //    * Value between 0 and 100.
+// //    */
+// //   value: PropTypes.number.isRequired,
+// // };
+
+// // export default function CircularStatic() {
+// //   const [progress, setProgress] = React.useState(10);
+
+// //   React.useEffect(() => {
+// //     const timer = setInterval(() => {
+// //       setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
+// //     }, 800);
+// //     return () => {
+// //       clearInterval(timer);
+// //     };
+// //   }, []);
+
+// //   return <CircularProgressWithLabel value={progress} />;
+// // }
+
+
+
+
+
+// // import React ,{useState} from 'react';
+
+
+// // import {Button, Dialog, DialogActions,DialogContent,DialogContentText,DialogTitle, FormControlLabel, FormGroup, Switch} from '@material-ui/core';
+
+
+// // export default function Dialogbox(){
+
+// //     const [open, setopen]= useState(false)
+
+// //     const [fullwidth, setfullwidth]=useState(true)
+
+// //     const handleClickOpen=()=>{
+// //         setopen(true)
+// //     }
+
+// //     const handleClose=()=>{
+// //         setopen(false)
+// //     }
+
+// //     const handleFullWidthChange=(event)=>{
+
+// //         setfullwidth(event.target.checked)
+// //         console.log(event.target.checked)
+
+// //     }
+
+
+// //      return(
+// //         <>
+// //         <div>
+
+// //         <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+// //         Open alert dialog
+// //       </Button>
+// //       <Dialog
+// //         open={open}
+// //         onClose={handleClose}
+// //         scroll='body'
+// //         aria-labelledby="alert-dialog-title"
+// //         aria-describedby="alert-dialog-description"
+// //       >
+// //         <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
+// //         <DialogContent>
+// //           <DialogContentText id="alert-dialog-description">
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+// //             Let Google help apps determine location. This means sending anonymous location data to
+// //             Google, even when no apps are running.
+
+// //           </DialogContentText>
+// //         </DialogContent>
+// //         <DialogActions>
+// //           <Button onClick={handleClose} color="primary">
+// //             Disagree
+// //           </Button>
+// //           <Button onClick={handleClose} color="primary" autoFocus>
+// //             Agree
+// //           </Button>
+// //         </DialogActions>
+// //       </Dialog>
+
+
+
+// //         </div>
+
+
+
+
+
+// //         </>
+// //      )
+
+// // }
+
+
+// // {/* <List subheader={
+// //     <ListSubheader variant="h6" color="inherit"> hello</ListSubheader>
+// // }>
+// //     <ListItem alignItems='flex-end'>
+
+// //       <ListItemAvatar>
+// //         <Avatar >
+// //             aka
+// //         </Avatar>
+
+// //       </ListItemAvatar>
+// //           <ListItemText primary="List Item" />
+
+// //           <ListItemSecondaryAction>
+
+// //             <CheckBox   />
+
+// //              </ListItemSecondaryAction>
+
+
+
+// //     </ListItem>
+// //     <Divider/>
+// //     <ListItem alignItems='flex-end'>
+
+// //       <ListItemAvatar>
+// //         <Avatar >
+// //             aka
+// //         </Avatar>
+
+// //       </ListItemAvatar>
+// //           <ListItemText primary="List Item" />
+
+// //           <ListItemSecondaryAction>
+
+// //             <CheckBox   />
+
+// //              </ListItemSecondaryAction>
+
+
+
+// //     </ListItem>
+// //     <Divider/>
+// //     <ListItem alignItems='flex-end'>
+
+// //       <ListItemAvatar>
+// //         <Avatar >
+// //             aka
+// //         </Avatar>
+
+// //       </ListItemAvatar>
+// //           <ListItemText primary="List Item" />
+
+// //           <ListItemSecondaryAction>
+
+// //             <CheckBox   />
+
+// //              </ListItemSecondaryAction>
+
+
+
+// //     </ListItem>
+// //     <Divider/>
+
+
+
+// //     </List> */}
+
+
+
+
+// import React from 'react';
+// //import { makeStyles } from '@material-ui/core/styles';
+// import Table from '@material-ui/core/Table';
+// import TableBody from '@material-ui/core/TableBody';
+// import TableCell from '@material-ui/core/TableCell';
+// import TableContainer from '@material-ui/core/TableContainer';
+// import TableHead from '@material-ui/core/TableHead';
+// import TableRow from '@material-ui/core/TableRow';
+// import Paper from '@material-ui/core/Paper';
+// import { RowingSharp } from '@material-ui/icons';
+
+
+
+// function createData(name, calories, fat, carbs, protein) {
+//     return { name, calories, fat, carbs, protein };
+//   }
+
+  
+// const rows = [
+//     createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+//     createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+//     createData('Eclair', 262, 16.0, 24, 6.0),
+//     createData('Cupcake', 305, 3.7, 67, 4.3),
+//     createData('Gingerbread', 356, 16.0, 49, 3.9),
+//   ];
+
+// export default function BasicTable() {
+
+
+//    return(
+//     <>
+//     <TableContainer>
+//         <Table>
+//             <TableHead>
+//                 <TableRow>
+//                     <TableCell>name </TableCell>
+//                     <TableCell align='right'>Calories </TableCell>
+//                     <TableCell align='right'>Calories </TableCell>
+//                     <TableCell align='right'>Calories </TableCell>
+//                     <TableCell align='right'>Calories </TableCell>
+               
+//                 </TableRow>
+//             </TableHead>
+            
+
+
+
+//             <TableBody>
+
+//                   { rows.map((row)=>(
+                       
+//                        <TableRow>
+
+// <TableCell align="right">{row.name}</TableCell>
+           
+//                <TableCell align="right">{row.calories}</TableCell>
+//               <TableCell align="right">{row.fat}</TableCell>
+//               <TableCell align="right">{row.carbs}</TableCell>
+//               <TableCell align="right">{row.protein}</TableCell>
+           
+       
+//                        </TableRow>
+       
+
+//                   ))
+
+            
+//                   }
+//             </TableBody>
+//         </Table>
+
+//     </TableContainer>
+    
+    
+//     </>
+//    )
+
+// }

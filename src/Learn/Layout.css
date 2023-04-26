@@ -1,0 +1,264 @@
+/* .comp1{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+
+
+.sub1{
+
+    display: flex;
+    background-color: rgb(87, 87, 151);
+    color: azure;
+    width: 50%;
+    height: 100vh;
+  
+}
+
+ .card1{ 
+
+    flex-wrap: wrap;
+    width: 200px;
+
+ 
+    align-items: center;
+    justify-content: center;
+  
+ }
+
+card1 h1{
+   
+    font-weight: 900;
+    font-size: 2em;
+}
+
+
+
+.sub2{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+  
+}
+.card2{
+    margin-top: auto;
+
+}
+
+.card2 img{
+   
+    width: 400px;
+    height: 350px;
+
+} */
+
+
+.main{
+
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+     
+}
+
+  img{
+
+    width: 100%;
+    height: 90%;
+    margin: 4px;
+
+ }
+
+.card {
+    flex-direction: column;
+    position: absolute;
+    top:30%;
+    left:20%;
+    width: 300px;
+    background-color: transparent;
+    color: aliceblue;
+
+}
+
+.btn{
+ 
+    width: 100px;
+    padding: 10px;
+    border:1px;
+    border-radius: 20px;
+    color: rgb(221, 221, 227);
+    background-color: rgb(200, 174, 25)
+    
+
+}
+
+
+.main2{
+
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
+.imgcard{
+   
+    width: 180px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.imgcard img{
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+.main3{
+
+     display: flex;
+     background-color: rgb(185, 206, 219);
+     margin: 5px;
+}
+
+
+.cardmain3{
+
+    display: flex;
+    flex-direction: row;
+    margin: 2px;
+}
+
+
+.cardmain3 img{
+
+     width: 200px;
+
+     height: 200px;
+
+
+}
+
+
+
+.cardmain3sub1{
+
+    display: flex;
+
+    flex-direction: row;
+
+    width: 100%;
+
+}
+
+
+
+ .subcard2 {
+ 
+    width: 100%; 
+    display: flex;
+    flex-direction: row;
+    color: aliceblue;
+  
+   }
+
+
+.sub1{
+
+    width: 50%;
+    background-color:silver;
+}
+
+
+
+.sub2{
+    
+    width: 50%;
+
+    background-color: rgb(178, 179, 185);
+
+}
+
+
+.cardmain3sub1 .card1{
+
+
+    width: 400px;
+
+    margin: 10px;
+
+    background-color: silver;
+
+    color: black;
+
+    margin-left: 100px;
+
+
+}
+
+.cardmain3sub1 .card2{
+    
+    width: 400px;
+
+    margin: 10px;
+
+    padding: 10px;
+
+    background-color: rgb(163, 93, 93);
+
+    color: rgb(203, 196, 196);
+
+    margin-left: 100px;
+
+
+
+
+}
+
+.imgcard1{
+    width: 100%;
+    height: 100%;
+
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+   
+}
+
+.maincard{
+
+    position: absolute;
+    top:1900px;
+    left: 30px;
+    display: flex;
+    width: 500px;
+    background-color: transparent;
+    flex-wrap: wrap;
+   
+}
+
+.maincard .card1{
+
+      width: 200px;
+      height: 200px;
+      background-color: rgb(188, 164, 102);
+      color: white;
+      margin: 10px;
+      padding: 10px;
+
+
+
+}
+
+

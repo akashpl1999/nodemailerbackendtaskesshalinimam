@@ -1,0 +1,176 @@
+node js is javascript built and charomr v8 javascript engine 
+built to run javascript code on serverside , fast scable and efficent perfomnace
+
+express provides middleware , built in function, to  https request handleing
+
+
+routing is handled by 
+
+express.router()
+
+ how the node js operting on client request;
+
+
+
+
+
+///in express 
+ middleware  are function   it have access to request and response object , 
+ this are excuited in order as it is  express application
+
+ middleware are mainly used for vaidating data, authtication, parscing the data, 
+
+
+
+///handling the errors in node js 
+
+
+In an Express application, 
+error handling can be done by using middleware functions 
+that have four arguments: (err, req, res, next).
+ These error-handling middleware functions are similar to 
+ regular middleware functions, but they are used specifically 
+ for handling errors that occur during the request-response cycle.
+
+
+
+
+
+
+
+
+
+import React, { useState } from 'react';
+
+const RegisterForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '', 
+    password: '',
+    confirmPassword: '',
+  });
+  const [errors, setErrors] = useState({});
+
+  const handleInputChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Check for validation errors
+    const validationErrors = {};
+    // Validate name
+    if (!formData.name) {
+      validationErrors.name = 'Name is required';
+    }
+    // Validate email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email) {
+      validationErrors.email = 'Email is required';
+    } else if (!emailRegex.test(formData.email)) {
+      validationErrors.email = 'Invalid email format';
+    }
+    // Validate password
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+    if (!formData.password) {
+      validationErrors.password = 'Password is required';
+    } else if (!passwordRegex.test(formData.password)) {
+      validationErrors.password = 'Password must be at least 8 characters and contain at least one lowercase letter, one uppercase letter, and one number';
+    }
+    // Validate confirm password
+    if (formData.password !== formData.confirmPassword) {
+      validationErrors.confirmPassword = 'Passwords do not match';
+    }
+    // Set errors
+    setErrors(validationErrors);
+    // Submit form if no errors
+    if (Object.keys(validationErrors).length === 0) {
+      // Submit form data
+      console.log(formData);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>Name</label>
+        <input type="text" name="name" value={formData.name} onChange={handleInputChange} />
+        {errors.name && <span>{errors.name}</span>}
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" name="email" value={formData.email} onChange={handleInputChange} />
+        {errors.email && <span>{errors.email}</span>}
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="password" name="password" value={formData.password} onChange={handleInputChange} />
+        {errors.password && <span>{errors.password}</span>}
+      </div>
+      <div>
+        <label>Confirm Password</label>
+        <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleInputChange} />
+        {errors.confirmPassword && <span>{errors.confirmPassword}</span>}
+      </div>
+      <button type="submit">Register</button>
+    </form>
+  );
+};
+
+export default RegisterForm;
+
+
+
+
+
+
+how to handle the asynchronous loading in react:
+
+
+ by using the commponentdidmount meathed , feacht the data from the server asynchronosly as the components is mounted,
+
+  as the data are received from server, we can update components, it initiaties the re-rendering as th data change
+
+
+
+    by using usestate and useeffect hooks, usestate is used to initialize the state variable, useffect is used th feact data from api, , as useeffct having the dependency facter,
+     we can feact data asynchronously asthe usestate changes
+
+
+     by using thired party libray like reducx it provides 
+
+
+
+
+
+
+     ///////////////////
+
+     he & selector is used to refer to the current component. It is useful when styling pseudo-classes or nested selectors. For example, if you want to style the :hover state of a button component, you can use the &:hover selector.
+
+     The * selector is used to target all elements inside a component. For example, if you want to set the box-sizing property to border-box for all elements inside a container component, you can use the * selector.
+
+     The > selector is used to target the direct child elements of a component. For example, if you have a list component and you want to style only the first level of list items, you can use the > selector.
+
+     //////////////////
+     m={x}: adds a margin of size x to all sides of the component
+mx={x}: adds a horizontal margin of size x to the component (left and right)
+my={x}: adds a vertical margin of size x to the component (top and bottom)
+m={t r b l}: adds a margin of different sizes to specific sides of the component (top, right, bottom, left)
+m={[t, r, b, l]}: adds a margin of different sizes to specific sides of the component in an array format (top, right, botto
+
+
+
+
+
+////
+In the example above, the maxWidth prop is set to "sm", which sets the maximum width of the container to the sm breakpoint size (600px by default). You can change this value to any of the following sizes:
+ 
+ 
+ "xs", "sm", "md", "lg", or "xl", 
+ 
+ or to a custom value in pixels, like "800px".
+

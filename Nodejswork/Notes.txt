@@ -1,0 +1,114 @@
+
+  npm install multer sharp
+
+  multer is used to uplode the files and Image 
+
+
+
+  const multer = require('multer')
+
+  const sharp = require('sharp') // it is used to compress and improve the quility of files
+
+  const cors=require('cors')
+
+
+
+app.use(cors())
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+
+app.use('/images', express.static('images')); it makes image is avilable on backend server http://localhost:7000/images/imagename
+
+
+
+const storge=multer.diskStorage({
+
+  destination:function(req, files, cb)=>{
+
+    cb(null, 'foladername")
+  
+  }
+  filename:(req,file, cd)=>{
+
+    cd(null, file.originalname)
+  }
+
+
+})
+ 
+
+ const filefilter=(req,file,cd)=>{
+  const allowedFileTypes=['image/jpeg', 'image/jpg','image/png'];
+  if(allowedFileTypes.includes(file.mimetype){
+    cd(null, true)
+  }else{
+    cd(null, false)
+  }
+ }
+
+ const uplode={{storge, filefilter}}
+
+
+
+ app.post('/photouplode, uplode.single("photo" it should same as name in front end), (req,res)=>{
+
+   console.log(req.files)
+
+   const image=req.files
+
+    const img2= sharp(image.buffer)
+    .resize(300)
+    .toFormat('jpeg')
+    .jpeg({ quality: 90 }) 
+    .toFile(`images/${image.split('.')[0]}-small.jpg`)
+    .then(() => {
+      res.json({ message: 'File uploaded and resized successfully' });
+    })
+
+
+
+    
+
+   const data=new register({
+
+
+     imagedata:image.originalname.split('.')[0] + '-small.jpg'
+   })
+
+ })
+
+
+
+app.post('/photouplode, uplode.array("photo" it should same as name in front end), (req,res)=>{
+
+ console.log(req.files)  // you shoude store the data in array infront end then send to back its generl array of objects
+
+
+
+     const reqFiles = [];
+    const url = req.protocol + '://' + req.get('host')
+    
+    for (var i = 0; i < req.files.length; i++) {
+        reqFiles.push(url +'/' +'images' + '/' + req.files[i].filename)
+    }
+     console.log(reqFiles)  it is array of strings  like [ "http://localhost:7000/images/imgname"]
+ 
+
+   const data=new register({
+
+     image:req.files // here image should made array type in mongoose schema
+
+   })
+
+ })
+
+
+
+
+
+
+
+
+  
+
+
